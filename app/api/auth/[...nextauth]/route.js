@@ -38,8 +38,8 @@ export const authoptions = NextAuth({
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
 
-      if (account.provider == "github") {
         await connectDb()
+      if (account.provider == "github") {
 
         const currentUser = await User.findOne({ email: user.email})
         if (!currentUser) {
