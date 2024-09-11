@@ -15,7 +15,7 @@ const Navbar = () => {
         <nav className='bg-black text-white flex justify-between items-center px-6 md:h-16 z-10 flex-col md:flex-row gap-2'>
             <Link href={"/"}>
             <div className="logo font-bold text-xl flex justify-center items-end">
-                <img src="./tea.gif" width={38} alt="tea" />
+                <img src="./logo.jpg" width={38} alt="tea" />
                 <span> GetMeAChai! </span>
             </div>
             </Link>
