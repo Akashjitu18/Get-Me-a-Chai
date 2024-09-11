@@ -52,6 +52,9 @@ Get Me A Chai is a crowdfunding platform designed specifically for developers, c
     GITHUB_ID=<Github_ID>
     GITHUB_SECRET=<Github_Secret>
 
+    NEXT_PUBLIC_KEY_ID='<RAZORPAY ID>'
+    KEY_SECRET='<RAZORPAY SECRET>'
+
     MONGODB_URI=<YOUR_MONGODB_URI>
 
     NEXT_PUBLIC_URL=<YOUR_NEXT_PUBLIC_URL>
