@@ -22,7 +22,7 @@ import Razorpay from "razorpay";
     }
     const secret = user.razorpaySecret
 
-    let xx = validatePaymentVerification({"order_id" : body.razorpay_order_id , "payment_id" : body.razorpay_payment_id}, body.razorpay_signature, secret)
+    let xx = validatePaymentVerification({"order_id" : body.razorpay_order_id , "payment_id" : body.razorpay_payment_id}, body.razorpay_signature, process.env.NEXTAUTH_SECRET)
 
     if(xx){
         // update the payment in the database
