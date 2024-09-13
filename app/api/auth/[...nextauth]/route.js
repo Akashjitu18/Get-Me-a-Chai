@@ -46,6 +46,7 @@ export const authoptions = NextAuth({
           const newUser = await User.create({
             email: user.email,
             username: user.email.split("@")[0],
+              name: user.name     
           })
         }
         return true
