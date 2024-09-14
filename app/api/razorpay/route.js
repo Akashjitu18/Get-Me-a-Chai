@@ -22,16 +22,16 @@ import Razorpay from "razorpay";
     }
     const secret = user.razorpaySecret
 
-    let xx = validatePaymentVerification({"order_id" : body.razorpay_order_id , "payment_id" : body.razorpay_payment_id}, body.razorpay_signature, process.env.NEXTAUTH_SECRET)
+    let xx = validatePaymentVerification({"order_id" : body.razorpay_order_id , "payment_id" : body.razorpay_payment_id}, body.razorpay_signature, secret)
 
     if(xx){
         // update the payment in the database
         const updatedPayment = await Payment.findOneAndUpdate({oid: body.razorpay_order_id}, {done : true} , {new: true})
        // Construct the absolute URL for redirection
-       const redirectUrl = new URL(`/${updatedPayment.to_user}?paymentdone=true`, process.env.NEXT_PUBLIC_URL).toString()
+       // const redirectUrl = new URL(`/${updatedPayment.to_user}?paymentdone=true`, process.env.NEXT_PUBLIC_URL).toString()
         console.log("redirect " , redirectUrl)
-       return NextResponse.redirect(redirectUrl)
-       // return NextResponse.redirect(`${process.env.NEXT_PUBLIC_URL}/${updatedPayment.to_user}?paymentdone=true`)
+       // return NextResponse.redirect(redirectUrl)
+       return NextResponse.redirect(`${process.env.NEXT_PUBLIC_URL}/${updatedPayment.to_user}?paymentdone=true`)
     }
     else{
         return NextResponse.json({success: false, message: "Payment verification failed"})
