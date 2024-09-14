@@ -29,7 +29,7 @@ import Razorpay from "razorpay";
         const updatedPayment = await Payment.findOneAndUpdate({oid: body.razorpay_order_id}, {done : true} , {new: true})
        // Construct the absolute URL for redirection
        const redirectUrl = new URL(`/${updatedPayment.to_user}?paymentdone=true`, process.env.NEXT_PUBLIC_URL).toString()
-       
+        console.log("redirect " , redirectUrl)
        return NextResponse.redirect(redirectUrl)
        // return NextResponse.redirect(`${process.env.NEXT_PUBLIC_URL}/${updatedPayment.to_user}?paymentdone=true`)
     }
