@@ -19,6 +19,8 @@ Get Me A Chai is a crowdfunding platform designed specifically for developers, c
 - **Payments**: Razorpay integration
 - **Hosting**: Vercel
 
+### LIVE DEMO : https://get-me-a-chai-mu.vercel.app
+
 ## Getting Started
 
 ### Prerequisites
